@@ -1,0 +1,7 @@
+<launch>
+  <arg name="fast_mode" default="false"/>
+  <arg name="gui" default="false"/>
+  <arg name="map_name" default="laas_adream">
+
+
+</launch>
