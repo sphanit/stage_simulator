@@ -1,7 +1,8 @@
 <launch>
 
-    <arg name="type" default="amcl"/>
- <!--- Run AMCL -->
+    <arg name="type" default="fake"/>
+ 
+		<!--- Run AMCL -->
     <include file="$(find stage_nav)/launch/localize.launch">
       <arg name="type" value="$(arg type)"/>
     </include>
