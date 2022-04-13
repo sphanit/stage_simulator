@@ -1,7 +1,11 @@
 <launch>
   <arg name="fast_mode" default="false"/>
   <arg name="gui" default="false"/>
-  <arg name="map_name" default="laas_adream">
+  <arg name="map_name" default="laas_adream"/>
 
+  <include file="$(find stage_ros)/launch/stage_pr2_$(arg map_name).launch">
+    <arg name="fast_mode" value="$(arg fast_mode)"/>
+    <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
+  </include>
 
 </launch>

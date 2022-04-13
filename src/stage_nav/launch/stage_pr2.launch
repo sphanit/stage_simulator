@@ -1,0 +1,17 @@
+<launch>
+  <arg name="map_name" default="open_space"/>
+  <arg name="gui" default="false"/>
+  <arg name="fast_mode" default="false"/>
+
+  <include file="$(find stage_ros)/launch/stage_sim.launch">
+    <arg name="fast_mode" value="$(arg fast_mode)"/>
+    <arg name="gui" value="$(arg gui)" unless="$(arg fast_mode)"/>
+    <arg name="map_name" value="$(arg map_name)"/>
+  </include>
+
+  <!-- start map_server with laas_adream map -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find stage_nav)/maps/$(arg map_name).yaml"/>
+
+  <include file="$(find stage_nav)/launch/robo_description.launch"/>
+
+</launch>
