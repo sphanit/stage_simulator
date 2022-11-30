@@ -1,0 +1,5 @@
+<launch>
+
+  <node pkg="stage_nav" name="controller" type="test_controller.py" output="screen" />
+
+</launch>
